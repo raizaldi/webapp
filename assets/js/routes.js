@@ -1,0 +1,26 @@
+var app = angular.module('main-App',['ngRoute']);
+app.config(['$routeProvider',
+   function($routeProvider){
+       $routeProvider.
+               when('/',{
+                    templateUrl:'beranda.php',
+                    controller:'berandaController'
+               });
+               when('/Beranda',{
+                    templateUrl:'beranda.php',
+                    controller:'berandaController'
+               });
+               when('/Investasi',{
+                    templateUrl:'investasi.php',
+                    controller:'InvestasiController'
+               });
+               when('/Registrasi',{
+                    templateUrl:'registrasi.php',
+                    controller:'registrasiController'
+               });
+               when('/myKambing',{
+                    templateUrl:'myKambing.php',
+                    controller:'KambingController'
+               });
+   } 
+]);
