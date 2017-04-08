@@ -1,9 +1,11 @@
 <?php
+
 if (!isset($_SESSION['email'])) {
  header("Location: index.php?module=beranda");
 }
 
-$koneksi     = mysqli_connect("localhost", "root", "", "akua");
+//$koneksi     = mysqli_connect("localhost","u276036398_akuan","N4fA53ng7zXW","u276036398_akua");
+$koneksi     = mysqli_connect("localhost","root","","akua");
 $id = $_SESSION['id'];
 
 $bulanchart       = mysqli_query($koneksi, "SELECT bulan from chart WHERE id_investor ='$id' and  type='harga'");
@@ -11,13 +13,21 @@ $bulanisi         = mysqli_query($koneksi, "SELECT isi from chart WHERE id_inves
 
 $bulanberat       = mysqli_query($koneksi, "SELECT bulan from chart WHERE id_investor ='$id' and  type='berat'");
 $beratisi         = mysqli_query($koneksi, "SELECT isi from chart WHERE id_investor ='$id' and  type='berat'");
+$gambar           = mysqli_query($koneksi, "SELECT nama_kambing from kambing WHERE id_investor ='$id'");
+
+
 ?>
 <br/>
 <div class="container">
     <div class="row">
         <div><center><h1><b>MY KAMBING</b></h1></center></div>
         <div class="col-sm-5">
-            <img src="assets/images/Produk2.png "/>
+            <?php
+                while ($b = mysqli_fetch_array($gambar)) {
+                echo '<img style="width:220px;height:220px" src="assets/images/'.$b['nama_kambing'].'">'; 
+            }
+            ?>
+            
         </div>
         <div class="col-sm-7">
             <div class="row">
@@ -38,14 +48,18 @@ $beratisi         = mysqli_query($koneksi, "SELECT isi from chart WHERE id_inves
        var myChart = new Chart(ctx, {
            type: 'bar',
            data: {
-               labels: [<?php while ($b = mysqli_fetch_array($bulanchart)) {
+               labels: [<?php
+while ($b = mysqli_fetch_array($bulanchart)) {
     echo '"' . $b['bulan'] . '",';
-} ?>],
+}
+?>],
                datasets: [{
                        label: 'Harga Kambing per Rp',
-                       data: [<?php while ($p = mysqli_fetch_array($bulanisi)) {
+                       data: [<?php
+while ($p = mysqli_fetch_array($bulanisi)) {
     echo '"' . $p['isi'] . '",';
-} ?>],
+}
+?>],
                        backgroundColor: [
                            'rgba(255, 99, 132, 0.2)',
                            'rgba(54, 162, 235, 0.2)',
@@ -71,10 +85,10 @@ $beratisi         = mysqli_query($koneksi, "SELECT isi from chart WHERE id_inves
                            ticks: {
                                beginAtZero: true
                                            }
-                                       }]
-                                   }
-                               }
-                           });
+                    }]
+            }
+        }
+    });
 </script>
 
 <script>

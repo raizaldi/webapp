@@ -65,6 +65,7 @@
         <div id="article">
             
             <?php
+            error_reporting(0);
             if (!isset($_GET['module'])) {
                 include "beranda.php";
             } elseif ($_GET['module'] == 'beranda') {
@@ -78,7 +79,7 @@
             } elseif ($_GET['module'] == 'myKambing') {
                 include "myKambing.php";
             } elseif ($_GET['module'] == 'Login') {
-                include "Login.php";
+                include "login.php";
             } elseif ($_GET['module'] == 'Logout') {
                 include "Logout.php";
             }

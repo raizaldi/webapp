@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.2.7.1
+-- version 4.2.11
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 29 Mar 2017 pada 19.11
--- Versi Server: 5.6.20
--- PHP Version: 5.5.15
+-- Generation Time: 08 Apr 2017 pada 20.26
+-- Versi Server: 5.6.21
+-- PHP Version: 5.6.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `akunadmin` (
   `password` varchar(100) NOT NULL,
   `nama` varchar(25) NOT NULL,
   `level` varchar(25) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `akunadmin`
@@ -78,7 +78,7 @@ CREATE TABLE IF NOT EXISTS `detail_produk` (
   `id_investor` varchar(100) NOT NULL,
   `id_produk` int(11) NOT NULL,
   `id_kambing` varchar(100) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `detail_produk`
@@ -143,7 +143,7 @@ CREATE TABLE IF NOT EXISTS `produk` (
   `foto_produk` varchar(255) NOT NULL,
   `status` int(11) NOT NULL,
   `harga` varchar(30) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `produk`
@@ -163,7 +163,7 @@ CREATE TABLE IF NOT EXISTS `slider` (
 `id_slider` int(11) NOT NULL,
   `foto` varchar(255) NOT NULL,
   `nama` varchar(50) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `slider`
@@ -231,7 +231,7 @@ MODIFY `no_detail` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 -- AUTO_INCREMENT for table `produk`
 --
 ALTER TABLE `produk`
-MODIFY `id_produk` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+MODIFY `id_produk` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=32;
 --
 -- AUTO_INCREMENT for table `slider`
 --

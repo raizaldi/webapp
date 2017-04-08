@@ -28,10 +28,17 @@
                 <div class="form-group">
                     <button class="btn btn-primary"  ng-click="simpan()">Registrasi</button>
                     <a  class="btn btn-success" href="index.php?module=investasi" role="button">Kembali</a>
-                    <a  class="btn btn-danger"style="float: right" href="index.php?module=investasi" role="button">Sistem Kami</a>
+                    <a  class="btn btn-danger"style="float: right" data-toggle="modal" data-target="#myModal" role="button">Sistem Kami</a>
                 </div>
             </form>
-        </div>       
+        </div>    
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">                
+                <img src="assets/images/flow.png">              
+            </div>
+        </div>
+    </div>
         <div class="col-md-6" ng-init="tampilbyid();">
                 <div class="col-sm-12 col-md-12" ng-repeat="item in investor">
                     <div class="thumbnail">
@@ -45,6 +52,7 @@
         </div>
     </div>
 </div>
+
 
 
 <script src="Controller/RegistrasiController.js"></script>

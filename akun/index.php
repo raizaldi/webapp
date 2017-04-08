@@ -47,6 +47,7 @@ if (!isset($_SESSION['level'])){
           
           <ul class="nav navbar-nav navbar-right">
               <li><a href="index.php?module=dashboard">Dashboard</a></li>
+              <li><a href="index.php?module=Artikel">Artikel</a></li>
               <li class="active"><a href="logout.php">Logout <span class="sr-only">(current)</span></a></li>
           </ul>
         </div><!--/.nav-collapse -->
@@ -64,6 +65,8 @@ if (!isset($_SESSION['level'])){
                 include "inputchart.php";
             }elseif ($_GET['module'] == 'tambahkambing') {
                 include "tambahkambing.php";
+            }elseif ($_GET['module'] == 'Artikel') {
+                include "Artikel.php";
             }
             ?>    
     </div>

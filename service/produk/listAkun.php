@@ -1,7 +1,7 @@
 <?php
 include "../../dbkoneksi/koneksi.php";
 
-$sql = "SELECT * FROM produk where status = 1";
+$sql = "SELECT * FROM produk";
 $result = $db->query($sql);
 $data = array();
 while($row = $result->fetch_assoc())
